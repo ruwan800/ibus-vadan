@@ -1,0 +1,6 @@
+run main.py
+
+To test open a text editer and press Ctrl+Space to switch to ibus-vadan
+	(IBus uses Ctrl+Space by default key combination to switch between input methods)
+
+Then you can type in sinhala a bit easy.
