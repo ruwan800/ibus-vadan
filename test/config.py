@@ -22,4 +22,4 @@
 
 engine_path = "/org/freedesktop/IBus/VadanTest/Engine"
 engine_name = "vadan-test"
-db_file = "../data/vadan.sqlite"
+db_file 	= "../data/vadan.sqlite"

@@ -112,7 +112,7 @@ class initDb:
 	def getDbResult(self, SQL,params):
 		result = self.execute(SQL,params)
 #		print(SQL,params)#########################@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-#		print(result)#########################@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#		print(result)#############################@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		if result:
 			result = [ word for word, in result ]
 			for item in self.suggestions:
