@@ -78,6 +78,7 @@ primaryReplaces   =	[ [ "aa", "A" ],
 #priority level should be equal or less than 5 and cannot be 0.
 secondaryReplaces =	[ [ "e", "e", "2", "2" ],
 					  [ "u", "u", "a", "2" ],
+					  [ "c", "k", "c", "2" ],
 					  [ "O", "O", "U", "1" ],
 					  [ "E", "E", "I", "1" ],
 					  [ "k.h", "K", "k.h", "1" ],
