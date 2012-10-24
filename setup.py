@@ -38,5 +38,5 @@ setup(name='ibus-vadan',
                   (os.path.join(installDir, 'share', package ), glob.glob('engine/*.py') ),
                   (os.path.join(installDir, 'share', 'ibus', 'component' ), ['data/ibus-vadan.xml']),
                   (os.path.join(dataDir, 'lib', package ), ['data/vadan.sqlite']),
-                  (os.path.join(installDir, 'share', 'pixmaps' ), ['data/ibus-vadan.png'])]
+                  (os.path.join(installDir, 'share', 'pixmaps' ), ['data/ibus-vadan.svg'])]
      )
