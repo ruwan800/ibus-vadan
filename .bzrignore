@@ -2,3 +2,5 @@
 *~
 *.tmp
 *.py[co]
+dist
+packaging

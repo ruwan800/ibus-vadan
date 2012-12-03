@@ -40,3 +40,4 @@ setup(name='ibus-vadan',
                   (os.path.join(dataDir, 'lib', package ), ['data/vadan.sqlite']),
                   (os.path.join(installDir, 'share', 'pixmaps' ), ['data/ibus-vadan.svg'])]
      )
+
