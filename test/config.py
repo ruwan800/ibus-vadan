@@ -21,5 +21,6 @@
 
 
 engine_path = "/org/freedesktop/IBus/VadanTest/Engine"
+bus_name	= "org.freedesktop.IBus.VadanTest"
 engine_name = "vadan-test"
 db_file 	= "../data/vadan.sqlite"
