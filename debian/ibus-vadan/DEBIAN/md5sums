@@ -1,0 +1,16 @@
+cd58c11f3eadb6cf56127978f636ee5d  usr/lib/ibus-vadan/ibus-vadan
+adfda06e874bf56206990feadfe1e5d8  usr/share/doc/ibus-vadan/changelog.Debian.gz
+c24ecbef8836902adda598701fbc857e  usr/share/doc/ibus-vadan/copyright
+5f1ce5706babad25dc441549378356ff  usr/share/ibus-vadan/advanced.py
+2357dbc14dcfe8de13e4b72a896fbd29  usr/share/ibus-vadan/db.py
+ae62ef56a0ead1c8cbb2d57e2002da7a  usr/share/ibus-vadan/engine.py
+3488499b105563c9afb73c9a4a21b307  usr/share/ibus-vadan/factory.py
+2eba3bf588b64907bfc0bbb93b54a0a2  usr/share/ibus-vadan/main.py
+94d14d643a2121b86901e41194dbd14a  usr/share/ibus-vadan/prepare.py
+43ed206f145e95429742a70305acad32  usr/share/ibus-vadan/tables.py
+c1d60a9512a924b07766d15be0b00d83  usr/share/ibus/component/ibus-vadan.xml
+d0517b20cb44ca963743fbbd1ed3db04  usr/share/pixmaps/ibus-vadan.png
+71162957c51afe11692067a68dd2263b  usr/share/pyshared/ibus_vadan-1.0.egg-info
+cd9f036a4c1f1455f68a4cd03c842c28  usr/share/python-support/ibus-vadan.private
+6d80ae3ca8e8f9af84c9dca3b42093b0  usr/share/python-support/ibus-vadan.public
+f38c3ca29e99e5c40732adfb11c8f67f  var/lib/ibus-vadan/vadan.sqlite

@@ -1,28 +1,30 @@
 #!/usr/bin/python
 #
-# db_connect.py
-# Copyright (C) 2012 
-#					ruwan Jayasinghe <ruwan800@gmail.com>
-#					Kasun Madhusanka <kasunmbx@gmail.com>
+# ibus-vadan - Input method for Sinhala based on I-Bus
+#
+# Copyright (C) 2012 ruwan Jayasinghe <ruwan800@gmail.com>
+#               2012 Kasun Madhusanka <ruwan800@gmail.com>
 # 
-# ibus-vadan-er is free software: you can redistribute it and/or modify it
-# under the terms of the GNU Lesser General Public License as published
-# by the Free Software Foundation, either version 3 of the License, or
+# ibus-vadan is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 # 
-# ibus-vadan-er is distributed in the hope that it will be useful, but
+# ibus-vadan is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the GNU Lesser General Public License for more details.
+# See the GNU General Public License for more details.
 # 
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.";
+# You should have received a copy of the GNU General Public License along
+# with this program.  If not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 
 import sqlite3
 from prepare import prepare
 from advanced import advanced
-import config
+
+db_file = '/var/lib/ibus-vadan/vadan.sqlite'
 
 class initDb:
 
@@ -66,8 +68,7 @@ class initDb:
 
 	def getExactWords(self, wordList):		
 		#first we trying to get the exact match of  both consonents and vowels
-		tempSuggestions1 = []
-		tempSuggestions2 = []
+		tempSuggestions = []
 		for wordData in wordList:
 			cons, vows, complexityFactor = wordData
 			SQL = "SELECT word,CF FROM vadan WHERE con = ? AND vow = ? ORDER BY frequency DESC"
@@ -76,14 +77,11 @@ class initDb:
 				for word,CF in result:
 					if CF == complexityFactor:
 						self.suggestions.append(word)
-					elif CF & complexityFactor == complexityFactor:
-						tempSuggestions1.append(word)
 					else:
-						tempSuggestions2.append(word)
+						tempSuggestions.append(word)
 			if 5 < len(self.suggestions):
 				break
-		self.suggestions.extend(tempSuggestions1)
-		self.suggestions.extend(tempSuggestions2)
+		self.suggestions.extend(tempSuggestions)
 
 
 	def getSimilarWords(self, wordList):
@@ -106,13 +104,11 @@ class initDb:
 
 		#at last we try to match consonents only in any length
 		SQL = "SELECT word FROM vadan WHERE con LIKE ? ORDER BY frequency DESC LIMIT 5"
-		self.getDbResult(SQL,cons+"%")
+		self.getDbResult(SQL,[cons+"%"])
 
 
 	def getDbResult(self, SQL,params):
 		result = self.execute(SQL,params)
-#		print(SQL,params)#########################@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-#		print(result)#############################@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		if result:
 			result = [ word for word, in result ]
 			for item in self.suggestions:
@@ -128,6 +124,7 @@ class initDb:
 		advanced.setTables(suffixTable,transTable)
 
 	def updateDb(self, text):
+		return
 		if text == self.newWord :
 			if not (advanced.suffixTable or advanced.transTable):
 				self.setAdvancedTables()
@@ -139,4 +136,4 @@ class initDb:
 			self.execute(SQL,text)
 
 
-Db = initDb(config.db_file)
+Db = initDb(db_file)
