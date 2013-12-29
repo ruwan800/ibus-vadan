@@ -1,0 +1,5 @@
+ibus-vadan (1.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- ruwan Jayasinghe <ruwan800@gmail.com>  Mon, 30 Dec 2013 00:41:25 +0530
