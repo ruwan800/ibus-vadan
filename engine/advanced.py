@@ -3,7 +3,7 @@
 # ibus-vadan - Input method for Sinhala based on I-Bus
 #
 # Copyright (C) 2012 ruwan Jayasinghe <ruwan800@gmail.com>
-#               2012 Kasun Madhusanka <ruwan800@gmail.com>
+#               2012 Kasun Madhusanka <kasunmbx@gmail.com>
 # 
 # ibus-vadan is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the

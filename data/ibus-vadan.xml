@@ -16,7 +16,7 @@
 			<language>si</language>
 			<license>GPL</license>
 			<author>ruwan Jayasinghe &lt;ruwan800@gmail.com&gt;</author>
-			<icon>/usr/share/pixmaps/ibus-vadan.png</icon>
+			<icon>/usr/share/pixmaps/ibus-vadan.svg</icon>
 			<layout>us</layout>
 			<longname>Vadan</longname>
 			<description>Vadan Input Method</description>

@@ -1,6 +1,0 @@
-*.o
-*~
-*.tmp
-*.py[co]
-dist
-packaging

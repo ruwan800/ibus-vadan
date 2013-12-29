@@ -3,7 +3,7 @@
 # ibus-vadan - Input method for Sinhala based on I-Bus
 #
 # Copyright (C) 2012 ruwan Jayasinghe <ruwan800@gmail.com>
-#               2012 Kasun Madhusanka <ruwan800@gmail.com>
+#               2012 Kasun Madhusanka <kasunmbx@gmail.com>
 # 
 # ibus-vadan is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -129,7 +129,11 @@ class initPrepare:
 			parallels.append(parallels[0])
 			parallels = [[j.replace(k,replValues[k][i]) for j in parallels[i] \
 															for k in replValues.keys() if k in j ] \
-															for i in range(2) ]
+															for i in range(2) ]	#TODO we have a big problem here.
+			#below is some solution for problem above
+			if 4 < len(parallels)/2 :
+				for i in [range(4,len(parallels)/2)+range(4+len(parallels)/2,len(parallels))]:
+					del parallels[i]
 
 			self.wordList = ["".join([ parallels[bool(y&(2**x))][x] for x in range(len(parallels[0]))]) \
 																	for y in range(2**len(parallels[0])) ]

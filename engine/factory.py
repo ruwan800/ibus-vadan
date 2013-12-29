@@ -3,7 +3,7 @@
 # ibus-vadan - Input method for Sinhala based on I-Bus
 #
 # Copyright (C) 2012 ruwan Jayasinghe <ruwan800@gmail.com>
-#               2012 Kasun Madhusanka <ruwan800@gmail.com>
+#               2012 Kasun Madhusanka <kasunmbx@gmail.com>
 # 
 # ibus-vadan is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -21,6 +21,7 @@
 
 import ibus
 import engine
+import config
 
 class EngineFactory(ibus.EngineFactoryBase):
     def __init__(self, bus):
@@ -31,9 +32,9 @@ class EngineFactory(ibus.EngineFactoryBase):
 
     def create_engine(self, engine_name):
         print engine_name
-        if engine_name == "vadan":
+        if engine_name == config.engine_name:
             self.__id += 1
-            return engine.Engine(self.__bus, "%s/%d" % ("/org/freedesktop/IBus/Vadan/Engine", self.__id))
+            return engine.Engine(self.__bus, "%s/%d" % (config.engine_path, self.__id))
 
         return super(EngineFactory, self).create_engine(engine_name)
 
